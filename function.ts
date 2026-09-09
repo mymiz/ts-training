@@ -161,3 +161,36 @@ console.log(canWatch(18, false));
 
     console.log(checkAge1(19));
     console.log(checkAge1(12));
+
+const numbers1: number[] = [5, 10, 15, 20, 25];
+    for(const number of numbers1){
+        console.log(number);
+    }
+
+const numbers2: number[] = [3,8,11,14,17,20];
+    for(const number of numbers2){
+        if(number % 2 === 0){
+            console.log(number);
+        }
+    }
+
+const numbers3: number[] = [2, 5, 8, 11, 14, 17, 20, 23];
+    for(const number of numbers3){
+        if( number > 10 && number % 2 !== 0){
+            console.log(number);
+        }
+    }
+
+const numbers4: number[] = [4, 7, 10, 13, 16, 19, 22, 25];
+    for(const number of numbers4){
+        if(number % 2 === 0 || number % 5 === 0){
+            console.log(number);
+        }
+    }
+
+const numbers: number[] = [5, 12, 7, 20, 3, 18, 25];
+    for(const number of numbers){
+        if(number > 10 && number % 2 === 0){
+            console.log(number)
+        }
+    }
