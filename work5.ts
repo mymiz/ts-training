@@ -5,7 +5,3 @@ numbers1.push(40);
 numbers1.pop();
 
 console.log(numbers1.length);
-
-
-
-const numbers: number [] =
