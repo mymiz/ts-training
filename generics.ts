@@ -129,15 +129,15 @@ const key: Productkey = "price";
 
 
 
-type Product = {
+type Product1 = {
     name: string;
     price: number;
     inStock: boolean;
 };
 
-type Productname = Product["name"];
-type Productprice = Product["price"];
-type ProductStock = Product["inStock"];
+type Productname = Product1["name"];
+type Productprice = Product1["price"];
+type ProductStock = Product1["inStock"];
 
 const name2: Productname = "LapTop";
     console.log(name2);
@@ -171,4 +171,78 @@ const resultage2 = getValue(user2, "age");
     console.log(resultage2);
 
 const resultisonline = getValue (user2, "isOnline")
-    console.log(resultisonline)
+    console.log(resultisonline);
+
+
+
+type Product = {
+    name: string,
+    price: number,
+    inStock: boolean
+};
+
+const name3: Partial<Product> = {
+    name: "Dima"
+};
+    console.log(name3);
+
+
+    const price3: Partial<Product> = {
+    price: 50000
+};
+    console.log(price3);
+
+
+const namestock: Partial<Product> = {
+    name: "Dima",
+    inStock: true
+};
+    console.log(namestock);
+
+
+
+type Settings = {
+    id?: number,
+    uid?: number
+};
+
+const compleatesettings: Required<Settings> = {
+    id:1,
+    uid:131
+};
+    console.log(compleatesettings);
+
+
+
+type Product2 = {
+    name: string;
+    price: number;
+    description: string;
+    inStock: boolean;
+};
+
+type Productinfo = Pick<Product2, "name" | "price">;
+
+const productinfo: Productinfo = {
+    name: "BMW",
+    price: 120000
+};
+    console.log(productinfo);
+
+
+
+type Product3 = {
+    name: string;
+    price: number;
+    description: string;
+    inStock: boolean;
+};
+
+type ProductWithoutDescription = Omit<Product3, "description">;
+
+const publicproduct: ProductWithoutDescription = {
+    name: "Laptop",
+    price: 12000,
+    inStock: true
+};
+    console.log(publicproduct)
