@@ -245,4 +245,46 @@ const publicproduct: ProductWithoutDescription = {
     price: 12000,
     inStock: true
 };
-    console.log(publicproduct)
+    console.log(publicproduct);
+
+
+
+type Product4 = "laptop"|"phone"|"tablet";
+
+type ProductPrice = Record<Product4, number>;
+
+const prices: ProductPrice = {
+    laptop: 50000,
+    phone: 12000,
+    tablet:1000
+};
+    console.log(prices);
+
+
+
+type Product5 = {
+    name: string;
+    price: number;
+    inStock: boolean;
+};
+
+type ReadonlyProduct = Readonly<Product5>;
+
+const product2: ReadonlyProduct = {
+    name: "LapTop",
+    price: 50000,
+    inStock: true
+};
+    console.log(product2)
+
+
+
+function getUserAge(age: number) {
+    return age = 20;
+}
+
+type AgeType = ReturnType<typeof getUserAge>;
+
+const age1: AgeType = 25;
+
+console.log(age1);
