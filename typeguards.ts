@@ -68,3 +68,55 @@ checkObject({ name: "Laptop", price: 50000 });
 //typeof	Проверяет тип значения, например string или number
 //instanceof	Проверяет принадлежность объекта к классу
 //in	Проверяет наличие свойства у объекта
+
+
+
+type Product2 = {
+    name: string;
+    price: number;
+};
+
+function isProduct(value: unknown ): value is Product2 {
+    return(typeof value === "object" &&
+        value !== null &&
+        "name" in value &&
+        "price" in value 
+)
+    }
+
+const data: unknown = {
+    name: "Laptop",
+    price: 50000
+};
+
+if(isProduct(data)) {
+    console.log(data.name);
+    console.log(data.price)
+}
+
+
+
+type User = {
+    name: string;
+    age: number;
+};
+
+function isUser(value: unknown): value is User {
+    return(typeof value === "object" &&
+        value !== null &&
+        "name" in value &&
+        "age" in value &&
+        typeof value.name === "string" &&
+        typeof value.age === "number"
+    )
+};
+
+const data1: unknown = {
+    name: "Dima",
+    age: 20
+};
+
+if(isUser(data1)){
+    console.log(data1.name);
+    console.log(data1.age)
+}
