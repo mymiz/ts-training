@@ -120,3 +120,22 @@ if(isUser(data1)){
     console.log(data1.name);
     console.log(data1.age)
 }
+
+
+
+type PaymentStatus = "pending" | "paid";
+
+function getPaymentMessage(role:PaymentStatus): string{
+    switch(role) {
+        case "pending":
+            return "ожидает оплаты";
+    
+        case "paid": 
+            return "оплачено"
+
+        default: {
+    const impossible: never = role;
+    return impossible;
+}
+    }
+}
