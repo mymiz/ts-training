@@ -139,3 +139,51 @@ function getPaymentMessage(role:PaymentStatus): string{
 }
     }
 }
+
+
+
+function PrintValue(value: string | number):void{
+    if(typeof value === "number"){
+        console.log(value * 2)
+    }
+    else {
+        console.log(value.toUpperCase())
+    }
+};
+
+PrintValue(12);
+PrintValue("Привет");
+
+
+
+type Dog = {
+    name: string, 
+    bark: boolean
+};
+
+type Cat = {
+    name: string,
+    meow: boolean
+};
+
+function makeSound(animal: Dog|Cat): void {
+    if("bark" in animal){
+        console.log("Собака лает")
+    }
+    else{
+        console.log("Кошка мяукает")
+    }
+};
+
+const dog: Dog = {
+    name: "Markiz",
+    bark: true
+};
+
+const cat: Cat = {
+    name: "Pusha",
+    meow: true
+};
+
+makeSound(dog)
+makeSound(cat)
