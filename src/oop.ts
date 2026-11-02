@@ -1,4 +1,4 @@
-class BankAccount {
+class BankAccount1 {
     public owner: string;
     private balance: number;
 
@@ -12,11 +12,11 @@ class BankAccount {
     }
 }
 
-const user = new BankAccount("Alex", 1000);
+const user1 = new BankAccount1("Alex", 1000);
 
-console.log(user)
+console.log(user1)
 
-console.log(user.showBalance);
+console.log(user1.showBalance);
 
 
 
@@ -41,3 +41,21 @@ const student = new Student("Alex", 20);
 
 console.log(student.name);
 console.log(student.getAge());
+
+
+
+class Product {
+    readonly id: number;
+    public name: string; 
+    public price: number;
+
+    constructor(id:number, name:string, price:number){
+        this.id = id,
+        this.name = name,
+        this.price = price
+    }
+}
+
+const product = new Product(101,"iphone",95000)
+
+console.log(product);

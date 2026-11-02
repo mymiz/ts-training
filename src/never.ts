@@ -56,4 +56,4 @@ function getOrderMessage(status:OrderStatus): string {
 
 console.log(getOrderMessage(OrderStatus.Pending));
 console.log(getOrderMessage(OrderStatus.Paid));
-console.log(getOrderMessage(OrderStatus.Cancelled));
+console.log(getOrderMessage(OrderStatus.Cancelled)); 
