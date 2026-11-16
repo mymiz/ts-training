@@ -80,3 +80,50 @@ const converter = new Converter();
 
 console.log(converter.convert(100));
 console.log(converter.convert("250"));
+
+
+
+type Order = {
+    id: number,
+    customer: string,
+    total: number,
+    isPaid: boolean
+};
+
+
+const orders: Order[] = [
+    {id:1, customer:"Anna", total:5000, isPaid:true},
+    {id:2, customer:"Dima", total:1200, isPaid:true},
+    {id:3, customer:"Ira", total:7000, isPaid:false},
+    {id:4, customer:"Inna", total:2000, isPaid:true},
+    {id:5, customer:"Denis", total:1000, isPaid:true}
+];
+
+function analyzeOrders(orders: Order[]): void {
+    let paidCount: number = 0;
+    let totalSum: number = 0;
+    let mostExpensive: Order | undefined = undefined;
+
+    for (const order of orders) {
+        if (order.isPaid === false) {
+            continue;
+        }
+
+        paidCount++;
+        totalSum += order.total;
+
+        if (mostExpensive === undefined) {
+            mostExpensive = order;
+        } else if (order.total > mostExpensive.total) {
+            mostExpensive = order;
+        }
+    }
+
+    console.log(paidCount);
+    console.log(totalSum);
+    console.log(mostExpensive);
+}
+
+
+(analyzeOrders(orders))
+
